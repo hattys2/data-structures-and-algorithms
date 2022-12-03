@@ -2,7 +2,7 @@ import { ListNode } from "./listNode";
 
 interface ILinkedList {
   listLength(): number;
-  insertInLinnkedList(data: number, position: number): void;
+  insertInLinkedList(data: number, position: number): void;
   deleteNodeFromLinkedList(position: number): void;
 }
 
@@ -19,7 +19,7 @@ export class LinkedList implements ILinkedList {
     return count;
   }
 
-  public insertInLinnkedList(data: number, position: number) {
+  public insertInLinkedList(data: number, position: number) {
     const newNode = new ListNode(data);
     let current = this.head;
     if (position === 1) {
