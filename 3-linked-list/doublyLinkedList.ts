@@ -2,7 +2,7 @@ import { DLLNode } from "./dllNode";
 
 interface IDoublyLinkedList {
   dllInsert(data: number, position: number): void;
-  deleteNodeFromLinkedList(position: number): void;
+  dllDelete(position: number): void;
 }
 
 export class DoublyLinkedList implements IDoublyLinkedList {
