@@ -4,6 +4,7 @@ interface ILinkedList {
   listLength(): number;
   insertInLinkedList(data: number, position: number): void;
   deleteNodeFromLinkedList(position: number): void;
+  nthNodeFromEnd(n: number): ListNode | null;
 }
 
 export class LinkedList implements ILinkedList {
@@ -55,5 +56,21 @@ export class LinkedList implements ILinkedList {
       }
       past.next = current?.next || null;
     }
+  }
+
+  // 問題3-5
+  public nthNodeFromEnd(nthNode: number) {
+    let pTemp: ListNode | null = this.head;
+    let pNthNode: ListNode | null = this.head;
+    let count = 0;
+    while (pTemp !== null) {
+      count++;
+      pTemp = pTemp?.next;
+      if (nthNode - count < 0) {
+        pNthNode && (pNthNode = pNthNode?.next);
+      }
+    }
+    if (count >= nthNode) return pNthNode;
+    return null;
   }
 }
